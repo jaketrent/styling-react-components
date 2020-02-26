@@ -1,5 +1,7 @@
 import React from 'react'
 
+import css from './Newsletter.module.css'
+
 // TODO: dynamic styles
 //   - Media queries
 // TODO: overrides
@@ -11,14 +13,14 @@ import React from 'react'
 
 export default function Newsletter() {
   return (
-    <section>
-      <header>
+    <section className={css.newsletter}>
+      <header className={css.header}>
         <h2>Get the newsletter</h2>
       </header>
 
       <form action="#" method="post">
-        <input type="email" placeholder="Your email" />
-        <input type="submit" value="Sign up!" />
+        <input className={css.email} type="email" placeholder="Your email" />
+        <input className={css.submit} type="submit" value="Sign up!" />
       </form>
     </section>
   )

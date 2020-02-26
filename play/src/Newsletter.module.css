@@ -1,0 +1,59 @@
+.newsletter {
+  position: relative;
+  border: 1px solid blue;
+  max-width: 400px;
+  font-size: 24px;
+  border-radius: 4px;
+  padding: 0 1em 2em 1em;
+}
+.newsletter:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  content: ' ';
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, lightblue, green);
+}
+.header {
+  position: relative;
+  color: red;
+  font-size: 0.85em;
+  border-radius: 4px;
+  background: white;
+  border: 4px solid green;
+  transform: translateY(-50%);
+}
+.header h2 {
+  margin: 0.15em 0.5em;
+}
+.email {
+  position: relative;
+  height: 42px;
+  line-height: 42px;
+  font-size: 0.85em;
+  padding: 0 0.5em;
+  width: 100%;
+  margin: 0.15em;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.email:focus {
+  outline: 4px solid green;
+  outline-offset: 0.15em;
+  border-radius: 4px;
+}
+.submit {
+  position: absolute;
+  bottom: -0.5em;
+  right: 0;
+  font-size: 1em;
+  background: green;
+  color: white;
+  z-index: 1;
+  transform: rotate(-5deg) translateX(25%);
+  padding: 0.25em 1em;
+  border-radius: 4px;
+  text-transform: uppercase;
+}

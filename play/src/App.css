@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.App-newsletter {
+  display: flex;
+  justify-content: center;
+  padding: 4rem;
+}
