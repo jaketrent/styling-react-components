@@ -1,32 +1,28 @@
+:root {
+  --colorSpectrum1: #ff598a;
+  --colorSpectrum2: #de56e8;
+  --colorSpectrum3: #b36bff;
+  --colorSpectrum4: #5b56e8;
+  --colorSpectrum5: #5e9fff;
+}
 .newsletter {
   position: relative;
-  border: 1px solid blue;
-  max-width: 400px;
+  max-width: 500px;
   font-size: 24px;
-  border-radius: 4px;
-  padding: 0 1em 2em 1em;
-}
-.newsletter:after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-  content: ' ';
-  width: 100%;
-  height: 6px;
-  background: linear-gradient(to right, lightblue, green);
+  padding: 1em 1em 2em 1em;
+  background: #2b283d;
 }
 .header {
   position: relative;
-  color: red;
+  color: white;
+  z-index: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
   font-size: 0.85em;
-  border-radius: 4px;
-  background: white;
-  border: 4px solid green;
-  transform: translateY(-50%);
+  text-shadow: 0 3px 2px #000;
 }
 .header h2 {
-  margin: 0.15em 0.5em;
+  margin: 0 0 0.5em 0;
 }
 .email {
   position: relative;
@@ -36,24 +32,97 @@
   padding: 0 0.5em;
   width: 100%;
   margin: 0.15em;
-  border-radius: 4px;
   border: 1px solid black;
 }
 .email:focus {
-  outline: 4px solid green;
+  outline: 2px solid #fff;
   outline-offset: 0.15em;
-  border-radius: 4px;
 }
 .submit {
   position: absolute;
-  bottom: -0.5em;
-  right: 0;
-  font-size: 1em;
-  background: green;
-  color: white;
-  z-index: 1;
-  transform: rotate(-5deg) translateX(25%);
-  padding: 0.25em 1em;
-  border-radius: 4px;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  height: 0;
+  width: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
   text-transform: uppercase;
+  transition: all 300ms;
+  font-size: 0;
+}
+.submitActive {
+  composes: submit;
+  transform: translate(-50%, 50%) rotate(-5deg);
+  bottom: 0;
+  height: auto;
+  width: auto;
+  font-size: 1em;
+  padding: 0.25em 1em;
+  z-index: 1;
+  color: #070222;
+  background: #fff;
+  font-weight: bold;
+  border-bottom: 3px solid var(--colorSpectrum5);
+  cursor: pointer;
+}
+.submitActive:focus {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+.submitActive:focus,
+.submitActive:hover {
+  border-bottom-color: var(--colorSpectrum1);
+  transform: translate(-50%, 50%) rotate(0deg) scale(1.2);
+}
+.spectrum {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  pointer-events: none;
+}
+@keyframes bar--jitter {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.9);
+  }
+}
+.bar {
+  height: 0.5em;
+  width: 20%;
+  animation: bar--jitter 350ms ease-out infinite alternate;
+  transform-origin: bottom;
+  transition: all 1s;
+}
+.bar:nth-child(1n) {
+  background: var(--colorSpectrum1);
+  animation-delay: 0;
+}
+.bar:nth-child(2n) {
+  background: var(--colorSpectrum2);
+  animation-delay: 50ms;
+}
+.bar:nth-child(3n) {
+  background: var(--colorSpectrum3);
+  animation-delay: 100ms;
+}
+.bar:nth-child(4n) {
+  background: var(--colorSpectrum4);
+  animation-delay: 150ms;
+}
+.bar:nth-child(5n) {
+  background: var(--colorSpectrum5);
+  animation-delay: 200ms;
+}
+.barActive {
+  composes: bar;
+  height: 100%;
 }

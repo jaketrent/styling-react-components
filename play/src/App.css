@@ -40,6 +40,10 @@
 * {
   box-sizing: border-box;
 }
+body {
+  background: #070222;
+  color: #fff;
+}
 
 .App-newsletter {
   display: flex;
