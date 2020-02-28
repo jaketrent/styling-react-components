@@ -1,10 +1,15 @@
 import React from 'react'
+import { ThemeProvider as ThemrProvider } from '@friendsofreactjs/react-css-themr'
 import { ThemeProvider } from 'styled-components'
 
 import './App.css'
 import Newsletter from './Newsletter.js'
 import NewsletterStyledComponent from './NewsletterStyledComponent.js'
 import * as css from './NewsletterOverride.module.css'
+
+const themrTheme = {
+  Newsletter: css
+}
 
 const styledComponentsTheme = {
   header: {
@@ -24,9 +29,11 @@ function App() {
   return (
     <div className="App">
       <p>CSS mod</p>
-      <div className="App-newsletter">
-        <Newsletter theme={css} />
-      </div>
+      <ThemrProvider theme={themrTheme}>
+        <div className="App-newsletter">
+          <Newsletter />
+        </div>
+      </ThemrProvider>
       <ThemeProvider theme={styledComponentsTheme}>
         <p>Styled</p>
         <div className="App-newsletter">
