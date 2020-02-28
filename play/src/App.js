@@ -3,7 +3,9 @@ import { ThemeProvider as ThemrProvider } from '@friendsofreactjs/react-css-them
 import { ThemeProvider } from 'styled-components'
 
 import './App.css'
+import './NewsletterOverride.css'
 import Newsletter from './Newsletter.js'
+import NewsletterStylesheet from './NewsletterStylesheet.js'
 import NewsletterStyledComponent from './NewsletterStyledComponent.js'
 import * as css from './NewsletterOverride.module.css'
 
@@ -28,18 +30,22 @@ const styledComponentsTheme = {
 function App() {
   return (
     <div className="App">
+      <p>CSS in JS</p>
+      <ThemeProvider theme={styledComponentsTheme}>
+        <div className="App-newsletter">
+          <NewsletterStyledComponent />
+        </div>
+      </ThemeProvider>
+      <p>CSS stylesheet</p>
+      <div className="App-newsletter">
+        <NewsletterStylesheet />
+      </div>
       <p>CSS mod</p>
       <ThemrProvider theme={themrTheme}>
         <div className="App-newsletter">
           <Newsletter />
         </div>
       </ThemrProvider>
-      <ThemeProvider theme={styledComponentsTheme}>
-        <p>Styled</p>
-        <div className="App-newsletter">
-          <NewsletterStyledComponent />
-        </div>
-      </ThemeProvider>
     </div>
   )
 }
