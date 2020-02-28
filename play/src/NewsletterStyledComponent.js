@@ -27,7 +27,7 @@ const Container = styled.section`
 `
 const Header = styled.header`
   position: relative;
-  color: white;
+  color: ${props => props.theme.header.fg};
   z-index: 1;
   text-transform: uppercase;
   white-space: nowrap;
@@ -48,9 +48,12 @@ const Email = styled.input`
   width: 100%;
   margin: 0.15em;
   border: 1px solid black;
+  color: ${props => props.theme.input.color};
+  background: ${props => props.theme.input.background};
+  text-align: ${props => props.theme.input.textAlign};
 
   &:focus {
-    outline: 2px solid #fff;
+    outline: ${props => props.theme.inputFocus.outline || '2px solid #fff'};
     outline-offset: 0.15em;
   }
 `
