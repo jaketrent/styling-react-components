@@ -1,0 +1,11 @@
+.header {
+  color: #ff598a;
+}
+.email {
+  color: #fff;
+  background: #070222;
+  text-align: center;
+}
+.email:focus {
+  outline: 2px solid #5e9fff;
+}
