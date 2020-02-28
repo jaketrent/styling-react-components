@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import './App.css'
 import './NewsletterOverride.css'
 import Newsletter from './Newsletter.js'
+import NewsletterInline from './NewsletterInline.js'
 import NewsletterStylesheet from './NewsletterStylesheet.js'
 import NewsletterStyledComponent from './NewsletterStyledComponent.js'
 import * as css from './NewsletterOverride.module.css'
@@ -30,6 +31,10 @@ const styledComponentsTheme = {
 function App() {
   return (
     <div className="App">
+      <p>Inline</p>
+      <div className="App-newsletter">
+        <NewsletterInline />
+      </div>
       <p>CSS in JS</p>
       <ThemeProvider theme={styledComponentsTheme}>
         <div className="App-newsletter">
