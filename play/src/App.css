@@ -45,8 +45,9 @@ body {
   color: #fff;
 }
 
+/* TODO: cleanup/rename */
 .App-newsletter {
   display: flex;
   justify-content: center;
-  padding: 4rem;
+  padding: 4rem 0;
 }

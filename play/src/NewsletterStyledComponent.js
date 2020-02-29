@@ -20,7 +20,7 @@ const jitter = keyframes`
 
 const Container = styled.section`
   position: relative;
-  max-width: 500px;
+  max-width: 100%;
   font-size: 24px;
   padding: 1em 1em 2em 1em;
   background: #2b283d;
@@ -30,7 +30,6 @@ const Header = styled.header`
   color: ${props => props.theme.header.fg};
   z-index: 1;
   text-transform: uppercase;
-  white-space: nowrap;
   font-size: 0.85em;
   text-shadow: 0 3px 2px #000;
 

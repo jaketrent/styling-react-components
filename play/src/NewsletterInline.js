@@ -59,7 +59,7 @@ const color = {
 const styles = {
   container: () => ({
     position: 'relative',
-    maxWidth: '500px',
+    maxWidth: '100%',
     fontSize: '24px',
     padding: '1em 1em 2em 1em',
     background: '#2b283d'
@@ -89,7 +89,6 @@ const styles = {
     color: theme.header.fg || 'white',
     zIndex: '1',
     textTransform: 'uppercase',
-    whiteSpace: 'nowrap',
     fontSize: '0.85em',
     textShadow: '0 3px 2px #000'
   }),
