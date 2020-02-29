@@ -8,7 +8,7 @@
 .es-newsletter {
   position: relative;
   max-width: 100%;
-  font-size: 24px;
+  font-size: 1.25em;
   padding: 1em 1em 2em 1em;
   background: #2b283d;
 }
@@ -25,8 +25,8 @@
 }
 .es-newsletter__email {
   position: relative;
-  height: 42px;
-  line-height: 42px;
+  height: 2em;
+  line-height: 2em;
   font-size: 0.85em;
   padding: 0 0.5em;
   width: 100%;
@@ -122,4 +122,10 @@
 }
 .es-newsletter__bar--active {
   height: 100%;
+}
+@media (min-width: 800px) {
+  .es-newsletter {
+    font-size: 2.25em;
+    max-width: 700px;
+  }
 }

@@ -9,7 +9,7 @@
 .newsletter {
   position: relative;
   max-width: 100%;
-  font-size: 24px;
+  font-size: 1.25em;
   padding: 1em 1em 2em 1em;
   background: #2b283d;
 }
@@ -26,8 +26,8 @@
 }
 .email {
   position: relative;
-  height: 42px;
-  line-height: 42px;
+  height: 2em;
+  line-height: 2em;
   font-size: 0.85em;
   padding: 0 0.5em;
   width: 100%;
@@ -99,7 +99,7 @@
 .bar {
   height: 0.5em;
   width: 20%;
-  /* animation: bar--jitter 350ms ease-out infinite alternate; */
+  animation: bar--jitter 350ms ease-out infinite alternate;
   transform-origin: bottom;
   transition: all 1s;
 }
@@ -127,17 +127,9 @@
   composes: bar;
   height: 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 800px) {
   .newsletter {
-    font-size: 36px;
-  }
-}
-@media only screen and (min-width: 600px) {
-  .newsletter {
-    font-size: 32px;
-    max-width: 600px;
-  }
-  .header {
-    white-space: normal;
+    font-size: 2.25em;
+    max-width: 700px;
   }
 }

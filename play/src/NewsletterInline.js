@@ -60,7 +60,7 @@ const styles = {
   container: () => ({
     position: 'relative',
     maxWidth: '100%',
-    fontSize: '24px',
+    fontSize: '1.25em',
     padding: '1em 1em 2em 1em',
     background: '#2b283d'
   }),
@@ -97,8 +97,8 @@ const styles = {
   }),
   email: ({ focused, theme }) => ({
     position: 'relative',
-    height: '42px',
-    lineHeight: '42px',
+    height: '2em',
+    lineHeight: '2em',
     fontSize: '0.85em',
     padding: '0 0.5em',
     width: '100%',

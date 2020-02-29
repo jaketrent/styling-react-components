@@ -21,10 +21,16 @@ const jitter = keyframes`
 const Container = styled.section`
   position: relative;
   max-width: 100%;
-  font-size: 24px;
+  font-size: 1.25em;
   padding: 1em 1em 2em 1em;
   background: #2b283d;
+
+  @media (min-width: 800px) {
+    font-size: 2.25em;
+    max-width: 700px;
+  }
 `
+
 const Header = styled.header`
   position: relative;
   color: ${props => props.theme.header.fg};
@@ -40,8 +46,8 @@ const Header = styled.header`
 
 const Email = styled.input`
   position: relative;
-  height: 42px;
-  line-height: 42px;
+  height: 2em;
+  line-height: 2em;
   font-size: 0.85em;
   padding: 0 0.5em;
   width: 100%;

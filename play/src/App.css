@@ -43,9 +43,9 @@
 body {
   background: #070222;
   color: #fff;
+  font-size: 18px;
 }
 
-/* TODO: cleanup/rename */
 .App-newsletter {
   display: flex;
   justify-content: center;
