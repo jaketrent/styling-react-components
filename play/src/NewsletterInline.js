@@ -8,8 +8,9 @@ function Newsletter(props) {
   const [emailFocused, setEmailFocused] = React.useState(false)
   const [submitHovered, setSubmitHovered] = React.useState(false)
   const { theme } = React.useContext(ThemeContext)
+  const { width } = useWindowDimensions()
   return (
-    <section style={styles.container()}>
+    <section style={styles.container({ width })}>
       <div style={styles.spectrum()} aria-hidden>
         {Array.from(Array(5)).map((_, i) => (
           <div
@@ -57,10 +58,10 @@ const color = {
 }
 
 const styles = {
-  container: () => ({
+  container: ({ width }) => ({
     position: 'relative',
-    maxWidth: '100%',
-    fontSize: '1.25em',
+    maxWidth: width >= 800 ? '700px' : '100%',
+    fontSize: width >= 800 ? '2.25em' : '1.25em',
     padding: '1em 1em 2em 1em',
     background: '#2b283d'
   }),
@@ -141,6 +142,23 @@ const styles = {
     outlineOffset: '4px',
     outline: hovered ? '2px solid #fff' : 'none'
   })
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = React.useState({
+    width: window.innerWidth
+  })
+
+  React.useEffect(() => {
+    function handleResize() {
+      setWindowDimensions({ width: window.innerWidth })
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  return windowDimensions
 }
 
 function countEmailParts(email) {
