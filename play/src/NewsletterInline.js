@@ -3,6 +3,7 @@ import React from 'react'
 function Newsletter(props) {
   const [email, setEmail] = React.useState('')
   const emailPartsCount = countEmailParts(email)
+  const [submitHovered, setSubmitHovered] = React.useState(false)
   return (
     <section style={styles.container()}>
       <div style={styles.spectrum()} aria-hidden>
@@ -23,7 +24,16 @@ function Newsletter(props) {
         value={email}
         onChange={evt => setEmail(evt.target.value)}
       />
-      <button style={styles.submit({ active: emailPartsCount >= 5 })}>
+      <button
+        style={styles.submit({
+          active: emailPartsCount >= 5,
+          hovered: submitHovered
+        })}
+        onFocus={() => setSubmitHovered(true)}
+        onBlur={() => setSubmitHovered(false)}
+        onMouseOver={() => setSubmitHovered(true)}
+        onMouseOut={() => setSubmitHovered(false)}
+      >
         Sign up
       </button>
     </section>
@@ -91,35 +101,36 @@ const styles = {
     margin: '0.15em',
     border: '1px solid black'
   }),
-  submit: ({ active }) => ({
+  submit: ({ active, hovered }) => ({
     position: 'absolute',
     left: '50%',
-    transform: 'translateX(-50%) rotate(0deg)',
-    height: '0',
-    width: '0',
+    transform: hovered
+      ? 'translate(-50%, 50%) rotate(0deg) scale(1.2)'
+      : active
+      ? 'translate(-50%, 50%) rotate(-5deg)'
+      : 'translateX(-50%) rotate(0deg)',
+    bottom: '0',
+    height: active ? 'auto' : '0',
+    width: active ? 'auto' : '0',
     overflow: 'hidden',
-    padding: '0',
+    padding: active ? '0.25em 1em' : '0',
     margin: '0',
-    background: 'transparent',
+    background: active ? '#fff' : 'transparent',
     border: '0',
+    borderBottom: hovered
+      ? `3px solid ${color.spectrum1}`
+      : active
+      ? `3px solid ${color.spectrum5}`
+      : 0,
     textTransform: 'uppercase',
     transition: 'all 300ms',
-    fontSize: '0'
-  }),
-  // TODO finish
-  submitActive: () => ({
-    transform: 'translate(-50%, 50%) rotate(-5deg)',
-    bottom: '0',
-    height: 'auto',
-    width: 'auto',
-    fontSize: '1em',
-    padding: '0.25em 1em',
+    fontSize: active ? '1em' : '0',
     zIndex: '1',
     color: '#070222',
-    background: '#fff',
     fontWeight: 'bold',
-    borderBottom: `3px solid ${color.spectrum5}`,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    outlineOffset: '4px',
+    outline: hovered ? '2px solid #fff' : 'none'
   })
 }
 
