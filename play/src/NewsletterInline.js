@@ -1,9 +1,13 @@
 import React from 'react'
 
+import { ThemeContext } from './InlineThemeContext'
+
 function Newsletter(props) {
   const [email, setEmail] = React.useState('')
   const emailPartsCount = countEmailParts(email)
+  const [emailFocused, setEmailFocused] = React.useState(false)
   const [submitHovered, setSubmitHovered] = React.useState(false)
+  const { theme } = React.useContext(ThemeContext)
   return (
     <section style={styles.container()}>
       <div style={styles.spectrum()} aria-hidden>
@@ -14,15 +18,17 @@ function Newsletter(props) {
           ></div>
         ))}
       </div>
-      <header style={styles.header()}>
+      <header style={styles.header({ theme })}>
         <h2 style={styles.headerH2()}>Get the newsletter</h2>
       </header>
       <input
-        style={styles.email()}
+        style={styles.email({ focused: emailFocused, theme })}
         type="email"
         placeholder="Your email"
         value={email}
         onChange={evt => setEmail(evt.target.value)}
+        onFocus={() => setEmailFocused(true)}
+        onBlur={() => setEmailFocused(false)}
       />
       <button
         style={styles.submit({
@@ -78,9 +84,9 @@ const styles = {
   barActive: () => ({
     height: '100%'
   }),
-  header: () => ({
+  header: ({ theme }) => ({
     position: 'relative',
-    color: 'white',
+    color: theme.header.fg || 'white',
     zIndex: '1',
     textTransform: 'uppercase',
     whiteSpace: 'nowrap',
@@ -90,8 +96,7 @@ const styles = {
   headerH2: () => ({
     margin: '0 0 0.5em 0'
   }),
-  // NOTE: no focus
-  email: () => ({
+  email: ({ focused, theme }) => ({
     position: 'relative',
     height: '42px',
     lineHeight: '42px',
@@ -99,7 +104,12 @@ const styles = {
     padding: '0 0.5em',
     width: '100%',
     margin: '0.15em',
-    border: '1px solid black'
+    border: '1px solid black',
+    color: theme.input.color || 'inherit',
+    background: theme.input.background || 'inherit',
+    textAlign: theme.input.textAlign || 'inherit',
+    outlineOffset: '0.15em',
+    outline: focused ? theme.inputFocus.outline || '2px solid #fff' : 'none'
   }),
   submit: ({ active, hovered }) => ({
     position: 'absolute',

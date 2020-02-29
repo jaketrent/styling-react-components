@@ -4,6 +4,7 @@ import { ThemeProvider } from 'styled-components'
 
 import './App.css'
 import './NewsletterOverride.css'
+import { ThemeProvider as InlineThemeProvider } from './InlineThemeContext'
 import Newsletter from './Newsletter.js'
 import NewsletterInline from './NewsletterInline.js'
 import NewsletterStylesheet from './NewsletterStylesheet.js'
@@ -28,13 +29,17 @@ const styledComponentsTheme = {
   }
 }
 
+const inlineTheme = styledComponentsTheme
+
 function App() {
   return (
     <div className="App">
       <p>Inline</p>
-      <div className="App-newsletter">
-        <NewsletterInline />
-      </div>
+      <InlineThemeProvider theme={inlineTheme}>
+        <div className="App-newsletter">
+          <NewsletterInline />
+        </div>
+      </InlineThemeProvider>
       <p>CSS in JS</p>
       <ThemeProvider theme={styledComponentsTheme}>
         <div className="App-newsletter">
