@@ -1,11 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-body {
-  background: #070222;
-  color: #fff;
-  font-size: 18px;
-}
 .app__newsletter {
   display: flex;
   justify-content: center;

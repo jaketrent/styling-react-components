@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ThemeContext } from './ThemeContext'
+import { ThemeContext } from './ThemeContext.js'
 
 function Newsletter(props) {
   const [email, setEmail] = React.useState('')

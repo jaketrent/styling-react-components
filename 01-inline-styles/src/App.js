@@ -1,8 +1,8 @@
 import React from 'react'
 
 import './App.css'
-import Newsletter from './Newsletter'
-import { ThemeProvider } from './ThemeContext'
+import Newsletter from './Newsletter.js'
+import { ThemeProvider } from './ThemeContext.js'
 
 const theme = {
   header: {
