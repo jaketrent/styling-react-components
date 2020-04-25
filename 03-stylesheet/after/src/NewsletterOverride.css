@@ -1,11 +1,11 @@
-.App-newsletter .es-newsletter__header {
+.app__newsletter .es-newsletter__header {
   color: #ff598a;
 }
-.es-newsletter__email {
+.app__newsletter .es-newsletter__email {
   color: #fff;
   background: #070222;
   text-align: center;
 }
-.es-newsletter__email:focus {
+.app__newsletter .es-newsletter__email:focus {
   outline: 2px solid #5e9fff;
 }
