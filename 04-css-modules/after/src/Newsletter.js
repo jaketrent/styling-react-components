@@ -3,11 +3,6 @@ import { themr } from '@friendsofreactjs/react-css-themr'
 
 import css from './Newsletter.module.css'
 
-// TODO: dynamic styles
-//   - Media queries
-// TODO: overrides
-//   - Different pages, themes
-
 function Newsletter(props) {
   const [email, setEmail] = React.useState('')
   const emailPartsCount = countEmailParts(email)
@@ -31,7 +26,7 @@ function Newsletter(props) {
         type="email"
         placeholder="Your email"
         value={email}
-        onChange={evt => setEmail(evt.target.value)}
+        onChange={(evt) => setEmail(evt.target.value)}
       />
       <button
         className={
@@ -45,7 +40,6 @@ function Newsletter(props) {
 }
 
 export default themr('Newsletter', css)(Newsletter)
-// export default Newsletter
 
 function countEmailParts(email) {
   if (/@.+\..{2,}$/.test(email)) {
