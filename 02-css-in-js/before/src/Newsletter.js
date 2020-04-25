@@ -42,11 +42,6 @@ const Email = styled.input`
   color: inherit;
   background: inherit;
   text-align: inherit;
-
-  &:focus {
-    outline: none;
-    outline-offset: 0.15em;
-  }
 `
 
 const Submit = styled.button`
