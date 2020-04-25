@@ -7,7 +7,7 @@ function Newsletter(props) {
   const [email, setEmail] = React.useState('')
   const emailPartsCount = countEmailParts(email)
   return (
-    <section className={props.theme.newsletter}>
+    <section className={props.theme.container}>
       <div className={props.theme.spectrum} aria-hidden>
         {Array.from(Array(5)).map((_, i) => (
           <div

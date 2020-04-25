@@ -5,8 +5,7 @@
   --colorSpectrum4: #5b56e8;
   --colorSpectrum5: #5e9fff;
 }
-/* TODO: rename container */
-.newsletter {
+.container {
   position: relative;
   max-width: 100%;
   font-size: 1.25em;
@@ -68,7 +67,6 @@
   border-bottom: 3px solid var(--colorSpectrum5);
   cursor: pointer;
 }
-/* TODO: combine */
 .submitActive:focus {
   outline: 2px solid #fff;
   outline-offset: 4px;
@@ -128,7 +126,7 @@
   height: 100%;
 }
 @media (min-width: 800px) {
-  .newsletter {
+  .container {
     font-size: 2.25em;
     max-width: 700px;
   }
