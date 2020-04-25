@@ -66,16 +66,21 @@
 }
 .es-newsletter__bar:nth-child(1n) {
   background: var(--colorSpectrum1);
+  animation-delay: 0;
 }
 .es-newsletter__bar:nth-child(2n) {
   background: var(--colorSpectrum2);
+  animation-delay: 50ms;
 }
 .es-newsletter__bar:nth-child(3n) {
   background: var(--colorSpectrum3);
+  animation-delay: 100ms;
 }
 .es-newsletter__bar:nth-child(4n) {
   background: var(--colorSpectrum4);
+  animation-delay: 150ms;
 }
 .es-newsletter__bar:nth-child(5n) {
   background: var(--colorSpectrum5);
+  animation-delay: 200ms;
 }
