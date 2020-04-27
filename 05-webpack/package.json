@@ -1,0 +1,27 @@
+{
+  "name": "05-webpack",
+  "version": "1.0.0",
+  "description": "Example of webpack config",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "sirv public"
+  },
+  "author": "jaketrent",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-nesting": "^7.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "sirv-cli": "^0.4.5",
+    "style-loader": "^1.2.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
