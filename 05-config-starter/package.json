@@ -1,0 +1,14 @@
+{
+  "name": "05-config-starter",
+  "version": "1.0.0",
+  "description": "Config starter",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {},
+  "author": "jaketrent",
+  "license": "MIT",
+  "devDependencies": {
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  }
+}
