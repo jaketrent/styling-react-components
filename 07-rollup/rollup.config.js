@@ -11,16 +11,15 @@ export default {
     file: path.resolve(__dirname, path.join('public', 'bundle.js')),
   },
   plugins: [
-    resolve(),
-    replace({
-      'process.env.NODE_ENV': JSON.stringify('production'),
-    }),
     babel({
       babelHelpers: 'bundled',
       exclude: 'node_modules/**',
-      presets: ['@babel/preset-react'],
     }),
     commonjs(),
     postcss(),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    }),
+    resolve(),
   ],
 }
