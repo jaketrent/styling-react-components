@@ -45,12 +45,7 @@ function Container(props) {
             padding: 1em 1em 2em 1em;
             background: #2b283d;
           }
-          @media (min-width: 800px) {
-            section {
-              font-size: 2.25em;
-              max-width: 700px;
-            }
-          }
+          /* 1-1 */
         `}
       </style>
     </section>
@@ -70,9 +65,7 @@ function Header(props) {
             font-size: 0.85em;
             text-shadow: 0 3px 2px #000;
           }
-          h2 {
-            margin: 0 0 0.5em 0;
-          }
+          /* 1-2 */
         `}
       </style>
     </header>
@@ -95,10 +88,7 @@ function Email(props) {
             margin: 0.15em;
             border: 1px solid black;
           }
-          input:focus {
-            outline: 2px solid #fff;
-            outline-offset: 0.15em;
-          }
+          /* 1-3 */
         `}
       </style>
     </>
@@ -126,30 +116,37 @@ function Submit(props) {
             cursor: pointer;
             text-transform: uppercase;
             transition: all 300ms;
-            height: ${props.active ? "auto" : "0"};
-            width: ${props.active ? "auto" : "0"};
-            font-size: ${props.active ? "1em" : "0"};
+            /* 1-4 */
+            ${props.active
+              ? `
+  height: auto;
+  width: auto;
+  font-size: 1em;
+  padding: 0.25em 1em;
+  `
+              : `
+  height: 0;
+  width: 0;
+  font-size: 0;
+  padding: 0;
+  `}
             translate: ${props.active ? "-50% 50%" : "-50%"};
             rotate: ${props.active ? "-5deg" : "45deg"};
-            padding: ${props.active ? "0.25em 1em" : "0"};
             border-bottom: ${props.active
               ? `3px solid ${color.spectrum5}`
               : "0"};
             outline: none;
           }
-          ${props.active
-            ? `
-              button:focus {
-                outline: 2px solid #fff;
-                outline-offset: 4px;
-              }
-              button:focus,
-              button:hover {
-                border-bottom-color: ${color.spectrum1};
-                transform: translate(-50%, 50%) rotate(0deg) scale(1.2);
-              }
-              `
-            : ""}
+          /* 1-5 */
+          button:focus {
+            outline: 2px solid #fff;
+            outline-offset: 4px;
+          }
+          button:focus,
+          button:hover {
+            border-bottom-color: ${color.spectrum1};
+            transform: translate(-50%, 50%) rotate(0deg) scale(1.2);
+          }
         `}
       </style>
     </button>
@@ -184,8 +181,8 @@ function Bar(props) {
       <style jsx>
         {`
           div {
-            height: ${props.active ? "100%" : "0.5em"};
-            animation: jitter 350ms ease-out infinite alternate;
+            /* 1-6 */
+            /* 1-7 */
             width: 20%;
             transform-origin: bottom;
             transition: all 1s;
@@ -209,14 +206,6 @@ function Bar(props) {
           div:nth-child(5n) {
             background: ${color.spectrum5};
             animation-delay: 200ms;
-          }
-          @keyframes jitter {
-            0% {
-              transform: scaleY(1);
-            }
-            100% {
-              transform: scaleY(0.9);
-            }
           }
         `}
       </style>
