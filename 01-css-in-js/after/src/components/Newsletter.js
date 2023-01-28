@@ -146,7 +146,8 @@ function Submit(props) {
               button:focus,
               button:hover {
                 border-bottom-color: ${color.spectrum1};
-                transform: translate(-50%, 50%) rotate(0deg) scale(1.2);
+                rotate: 0deg;
+                scale: 1.2;
               }
               `
             : ""}
