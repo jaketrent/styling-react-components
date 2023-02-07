@@ -117,19 +117,6 @@ function Submit(props) {
             text-transform: uppercase;
             transition: all 300ms;
             /* 1-4 */
-            ${props.active
-              ? `
-  height: auto;
-  width: auto;
-  font-size: 1em;
-  padding: 0.25em 1em;
-  `
-              : `
-  height: 0;
-  width: 0;
-  font-size: 0;
-  padding: 0;
-  `}
             translate: ${props.active ? "-50% 50%" : "-50%"};
             rotate: ${props.active ? "-5deg" : "45deg"};
             border-bottom: ${props.active
