@@ -70,7 +70,7 @@ function Header(props) {
             font-size: 0.85em;
             text-shadow: 0 3px 2px #000;
           }
-          h2 {
+          header :global(h2) {
             margin: 0 0 0.5em 0;
           }
         `}
